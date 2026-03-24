@@ -1,0 +1,83 @@
+produtos:
+  m_and_a:
+    nome: "M&A"
+    subtipos:
+      - "buy-side"
+      - "sell-side"
+      - "joint venture"
+      - "carve-out"
+    palavras_chave:
+      - "aquisicao"
+      - "fusao"
+      - "venda de ativo"
+      - "joint venture"
+
+  reestruturacao_distressed:
+    nome: "Reestruturacao / Distressed"
+    subtipos:
+      - "renegociacao"
+      - "recuperacao judicial"
+      - "turnaround"
+      - "distressed m&a"
+    palavras_chave:
+      - "reestruturacao"
+      - "recuperacao judicial"
+      - "reescalonamento"
+      - "distressed"
+
+  ecm:
+    nome: "ECM"
+    subtipos:
+      - "ipo"
+      - "follow-on"
+      - "block trade"
+      - "equity-linked"
+    palavras_chave:
+      - "oferta publica"
+      - "ipo"
+      - "follow-on"
+      - "captacao em bolsa"
+
+  dcm:
+    nome: "DCM"
+    subtipos:
+      - "debentures"
+      - "bonds"
+      - "cri/cra"
+      - "liability management"
+    palavras_chave:
+      - "debenture"
+      - "emissao de divida"
+      - "bond"
+      - "cri"
+      - "cra"
+
+  special_situations:
+    nome: "Special Situations"
+    subtipos:
+      - "capital solution"
+      - "structured capital"
+      - "bridge"
+      - "event-driven"
+    palavras_chave:
+      - "special situations"
+      - "capital estruturado"
+      - "ponte"
+      - "situacao especial"
+
+  infra_concessoes_ppp:
+    nome: "Infra / Concessoes / PPP"
+    subtipos:
+      - "rodovias"
+      - "saneamento"
+      - "energia"
+      - "mobilidade"
+    palavras_chave:
+      - "concessao"
+      - "ppp"
+      - "leilao"
+      - "infraestrutura"
+
+defaults:
+  produto_trilha: "a_validar_manual"
+  subtipo: "a_definir"

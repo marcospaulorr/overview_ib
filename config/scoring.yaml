@@ -1,0 +1,31 @@
+score_total_maximo: 100
+
+componentes:
+  materialidade:
+    peso_maximo: 25
+    descricao: "Potencial economico e relevancia do mandato."
+  mandatabilidade:
+    peso_maximo: 25
+    descricao: "Probabilidade de haver espaco para atuacao de advisor."
+  timing:
+    peso_maximo: 15
+    descricao: "Janela temporal da oportunidade."
+  qualidade_sinal:
+    peso_maximo: 15
+    descricao: "Confiabilidade e riqueza dos sinais observados."
+  aderencia:
+    peso_maximo: 10
+    descricao: "Fit com foco e estrategia do radar."
+  competitividade:
+    peso_maximo: 10
+    descricao: "Atratividade ajustada pela pressao competitiva."
+
+prioridade_editorial:
+  destaque_principal:
+    score_minimo: 80
+  memo_principal:
+    score_minimo: 65
+  monitorar:
+    score_minimo: 50
+  base:
+    score_minimo: 0
