@@ -1,82 +1,273 @@
 produtos:
   m_and_a:
     nome: "M&A"
-    subtipos:
-      - "buy-side"
-      - "sell-side"
-      - "joint venture"
-      - "carve-out"
+    aliases:
+      - "mergers acquisitions"
+      - "m&a"
     palavras_chave:
       - "aquisicao"
+      - "compra de participacao"
+      - "desinvestimento"
       - "fusao"
-      - "venda de ativo"
       - "joint venture"
+      - "processo competitivo"
+      - "sale of"
+      - "venda de ativo"
+    fontes_chave:
+      - "bloomberg"
+      - "brazil journal"
+      - "neofeed"
+      - "pipeline"
+      - "valor"
+    subtipos_regras:
+      buy-side:
+        palavras_chave:
+          - "adquire"
+          - "aquisicao de"
+          - "bid por"
+          - "compra de"
+          - "compra participacao"
+      sell-side:
+        palavras_chave:
+          - "alienacao de ativo"
+          - "desinvestimento"
+          - "mandato de venda"
+          - "sale of"
+          - "venda de"
+      joint venture:
+        palavras_chave:
+          - "joint venture"
+          - "parceria societaria"
+      carve-out:
+        palavras_chave:
+          - "carve out"
+          - "cisao de ativos"
+          - "segregacao de ativos"
+          - "spin off"
 
   reestruturacao_distressed:
-    nome: "Reestruturacao / Distressed"
-    subtipos:
-      - "renegociacao"
-      - "recuperacao judicial"
-      - "turnaround"
-      - "distressed m&a"
-    palavras_chave:
-      - "reestruturacao"
-      - "recuperacao judicial"
-      - "reescalonamento"
+    nome: "Reestruturacao"
+    aliases:
       - "distressed"
+      - "turnaround"
+    palavras_chave:
+      - "default"
+      - "distressed"
+      - "inadimplencia"
+      - "recuperacao extrajudicial"
+      - "recuperacao judicial"
+      - "renegociacao"
+      - "reescalonamento"
+      - "reestruturacao"
+      - "standstill"
+      - "turnaround"
+      - "waiver"
+    fontes_chave:
+      - "pipeline"
+      - "stj"
+      - "tjsp"
+      - "valor"
+    subtipos_regras:
+      renegociacao:
+        palavras_chave:
+          - "renegociacao"
+          - "reescalonamento"
+          - "rolagem"
+          - "standstill"
+          - "waiver"
+      recuperacao judicial:
+        palavras_chave:
+          - "pedido de recuperacao"
+          - "plano de recuperacao"
+          - "recuperacao extrajudicial"
+          - "recuperacao judicial"
+      turnaround:
+        palavras_chave:
+          - "melhoria operacional"
+          - "plano de eficiencia"
+          - "reestruturacao operacional"
+          - "turnaround"
+      distressed m&a:
+        palavras_chave:
+          - "asset sale para pagar divida"
+          - "distressed m a"
+          - "venda de ativos para pagar dividas"
 
   ecm:
     nome: "ECM"
-    subtipos:
-      - "ipo"
-      - "follow-on"
-      - "block trade"
-      - "equity-linked"
+    aliases:
+      - "equity capital markets"
     palavras_chave:
-      - "oferta publica"
-      - "ipo"
-      - "follow-on"
+      - "abb"
+      - "block trade"
       - "captacao em bolsa"
+      - "follow on"
+      - "ipo"
+      - "listagem"
+      - "oferta inicial"
+      - "oferta publica"
+      - "oferta subsequente"
+    fontes_chave:
+      - "b3"
+      - "cvm"
+    subtipos_regras:
+      ipo:
+        palavras_chave:
+          - "estreia na bolsa"
+          - "ipo"
+          - "listagem"
+          - "oferta inicial"
+      follow-on:
+        palavras_chave:
+          - "follow on"
+          - "oferta subsequente"
+          - "primary follow on"
+      block trade:
+        palavras_chave:
+          - "abb"
+          - "accelerated bookbuilding"
+          - "block trade"
+      equity-linked:
+        palavras_chave:
+          - "convertible"
+          - "equity linked"
+          - "exchangeable"
 
   dcm:
     nome: "DCM"
-    subtipos:
-      - "debentures"
-      - "bonds"
-      - "cri/cra"
-      - "liability management"
+    aliases:
+      - "debt capital markets"
     palavras_chave:
-      - "debenture"
-      - "emissao de divida"
       - "bond"
-      - "cri"
+      - "consent solicitation"
       - "cra"
+      - "cri"
+      - "debenture"
+      - "debentures"
+      - "emissao de divida"
+      - "liability management"
+      - "nota comercial"
+      - "notes"
+      - "tender offer"
+    fontes_chave:
+      - "anbima"
+      - "cvm"
+    subtipos_regras:
+      debentures:
+        palavras_chave:
+          - "debenture"
+          - "debentures"
+          - "nota comercial"
+      bonds:
+        palavras_chave:
+          - "144a"
+          - "bond"
+          - "notes"
+          - "reg s"
+      cri/cra:
+        palavras_chave:
+          - "cra"
+          - "cri"
+          - "cri cra"
+      liability management:
+        palavras_chave:
+          - "consent solicitation"
+          - "liability management"
+          - "tender offer"
+          - "waiver"
 
   special_situations:
-    nome: "Special Situations"
-    subtipos:
-      - "capital solution"
-      - "structured capital"
-      - "bridge"
-      - "event-driven"
-    palavras_chave:
+    nome: "SpecialSits"
+    aliases:
+      - "special sits"
       - "special situations"
+    palavras_chave:
+      - "bridge loan"
       - "capital estruturado"
-      - "ponte"
+      - "event driven"
+      - "mezanino"
+      - "preferred equity"
+      - "special situations"
+      - "structured capital"
       - "situacao especial"
+    fontes_chave:
+      - "pipeline"
+      - "valor"
+    subtipos_regras:
+      capital solution:
+        palavras_chave:
+          - "capital solution"
+          - "capital solutions"
+          - "solucao de capital"
+      structured capital:
+        palavras_chave:
+          - "capital estruturado"
+          - "mezanino"
+          - "preferred equity"
+          - "structured capital"
+      bridge:
+        palavras_chave:
+          - "bridge"
+          - "bridge loan"
+          - "ponte"
+      event-driven:
+        palavras_chave:
+          - "event driven"
+          - "litigation finance"
+          - "situacao especial"
 
   infra_concessoes_ppp:
-    nome: "Infra / Concessoes / PPP"
-    subtipos:
-      - "rodovias"
-      - "saneamento"
-      - "energia"
-      - "mobilidade"
-    palavras_chave:
-      - "concessao"
-      - "ppp"
-      - "leilao"
+    nome: "Infra"
+    aliases:
+      - "concessoes"
       - "infraestrutura"
+      - "ppp"
+    palavras_chave:
+      - "aeroporto"
+      - "concessao"
+      - "ferrovia"
+      - "infraestrutura"
+      - "leilao"
+      - "porto"
+      - "ppp"
+      - "rodovia"
+      - "saneamento"
+      - "terminal"
+      - "transmissao"
+    fontes_chave:
+      - "anac"
+      - "ana"
+      - "aneel"
+      - "antaq"
+      - "antt"
+      - "bndes"
+      - "ppi"
+    subtipos_regras:
+      rodovias:
+        palavras_chave:
+          - "concessao rodoviaria"
+          - "rodovia"
+          - "rodovias"
+      saneamento:
+        palavras_chave:
+          - "agua e esgoto"
+          - "saneamento"
+      energia:
+        palavras_chave:
+          - "distribuicao"
+          - "eolica"
+          - "energia"
+          - "geracao"
+          - "solar"
+          - "transmissao"
+      mobilidade:
+        palavras_chave:
+          - "aeroporto"
+          - "ferrovia"
+          - "metro"
+          - "mobilidade"
+          - "porto"
+          - "terminal"
 
 defaults:
   produto_trilha: "a_validar_manual"
