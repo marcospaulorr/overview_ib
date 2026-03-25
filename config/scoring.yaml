@@ -1,31 +1,358 @@
 score_total_maximo: 100
 
+colunas:
+  valor_divulgado:
+    - "valor_estimado"
+  data_evento:
+    - "data_fato_relevante"
+  data_captura:
+    - "data_monitoramento"
+  tipo_fonte:
+    - "categoria_fonte"
+  fonte:
+    - "origem_sinal"
+
 componentes:
   materialidade:
     peso_maximo: 25
-    descricao: "Potencial economico e relevancia do mandato."
+    faixas_valor:
+      - score: 25
+        valor_minimo: 1000000000
+        justificativa: "valor claramente acima de 1 bi"
+      - score: 20
+        valor_minimo: 500000000
+        justificativa: "valor entre 500 mi e 1 bi"
+      - score: 15
+        valor_minimo: 250000000
+        justificativa: "valor entre 250 mi e 500 mi"
+      - score: 10
+        valor_minimo: 100000000
+        justificativa: "valor entre 100 mi e 250 mi"
+    sinais_fortes_sem_valor:
+      score: 5
+      produtos:
+        - "M&A"
+        - "Reestruturacao"
+        - "ECM"
+        - "DCM"
+        - "SpecialSits"
+        - "Infra"
+      subtipos:
+        - "buy-side"
+        - "sell-side"
+        - "ipo"
+        - "follow-on"
+        - "debentures"
+        - "bonds"
+        - "cri/cra"
+        - "recuperacao judicial"
+        - "bridge"
+        - "rodovias"
+        - "saneamento"
+        - "energia"
+      palavras_chave:
+        - "aquisicao"
+        - "bond"
+        - "concessao"
+        - "debentures"
+        - "emissao de divida"
+        - "ipo"
+        - "leilao"
+        - "oferta publica"
+        - "processo competitivo"
+        - "recuperacao judicial"
+      justificativa: "valor nao divulgado, mas ha sinais de porte relevante"
+    justificativa_abaixo_corte: "valor abaixo do corte minimo"
+    justificativa_sem_dados: "sem valor ou indicio suficiente de porte"
+
   mandatabilidade:
     peso_maximo: 25
-    descricao: "Probabilidade de haver espaco para atuacao de advisor."
+    produtos_formais:
+      - "ECM"
+      - "DCM"
+      - "Infra"
+      - "Reestruturacao"
+    subtipos_formais:
+      - "ipo"
+      - "follow-on"
+      - "block trade"
+      - "debentures"
+      - "bonds"
+      - "cri/cra"
+      - "liability management"
+      - "recuperacao judicial"
+      - "rodovias"
+      - "saneamento"
+      - "energia"
+      - "mobilidade"
+    produtos_muito_provaveis:
+      - "M&A"
+      - "SpecialSits"
+    subtipos_muito_provaveis:
+      - "buy-side"
+      - "sell-side"
+      - "joint venture"
+      - "carve-out"
+      - "capital solution"
+      - "structured capital"
+      - "bridge"
+      - "distressed m&a"
+    produtos_boa_chance:
+      - "M&A"
+      - "Reestruturacao"
+      - "SpecialSits"
+    subtipos_boa_chance:
+      - "renegociacao"
+      - "turnaround"
+      - "event-driven"
+    sinais_assessor:
+      - "assessor financeiro"
+      - "bookrunner"
+      - "contratou assessor"
+      - "coordenador lider"
+      - "mandatou banco"
+      - "selecionou assessor"
+    sinais_formais:
+      - "edital"
+      - "emissao"
+      - "lancamento"
+      - "leilao"
+      - "oferta publica"
+      - "pedido de recuperacao"
+      - "plano de recuperacao"
+      - "protocolou"
+    sinais_muito_provaveis:
+      - "estrutura operacao"
+      - "negocia com credores"
+      - "negocia transacao"
+      - "prepara emissao"
+      - "prepara oferta"
+      - "processo competitivo"
+    sinais_boa_chance:
+      - "analisa alternativas"
+      - "avalia venda"
+      - "busca solucao"
+      - "estuda transacao"
+      - "planeja captar"
+    sinais_hipotese:
+      - "avalia"
+      - "considera"
+      - "deve estudar"
+      - "pode"
+      - "sinal preliminar"
+    sinais_fracos:
+      - "especulacao"
+      - "hipotese"
+      - "rumor"
+    justificativa_25: "evento formal com clara demanda de assessor"
+    justificativa_20: "situacao muito provavel de gerar mandato"
+    justificativa_15: "boa chance de mandato, ainda em formacao"
+    justificativa_10: "hipotese razoavel, ainda pouco concreta"
+    justificativa_5: "sinal fraco de mandatabilidade"
+    justificativa_0: "dificil virar mandato com os dados atuais"
+
   timing:
     peso_maximo: 15
-    descricao: "Janela temporal da oportunidade."
+    dias_muito_bom_max: 30
+    dias_bom_max: 90
+    dias_monitorar_max: 180
+    sinais_muito_bons:
+      - "ainda neste mes"
+      - "bookbuilding"
+      - "este mes"
+      - "hoje"
+      - "nas proximas semanas"
+      - "protocolou"
+    sinais_bons:
+      - "ainda neste semestre"
+      - "este trimestre"
+      - "nos proximos meses"
+      - "prepara"
+      - "proximo trimestre"
+    sinais_fracos:
+      - "longo prazo"
+      - "sem cronograma"
+      - "sem data"
+      - "sem prazo"
+      - "estagio preliminar"
+    justificativa_15: "timing muito bom pelos sinais textuais"
+    justificativa_10: "janela boa para monitorar de perto"
+    justificativa_5: "timing ainda cedo ou pouco definido"
+    fallback_score: 5
+    fallback_justificativa: "sem data objetiva; timing tratado de forma conservadora"
+
   qualidade_sinal:
     peso_maximo: 15
-    descricao: "Confiabilidade e riqueza dos sinais observados."
+    multiplas_fontes_minimo: 2
+    tipos_primarios:
+      - "agencia"
+      - "fonte primaria"
+      - "oficial"
+      - "regulatorio"
+      - "tribunal"
+    fontes_primarias:
+      - "ana"
+      - "anac"
+      - "anbima"
+      - "aneel"
+      - "antaq"
+      - "antt"
+      - "b3"
+      - "bndes"
+      - "cvm"
+      - "ppi"
+      - "stj"
+      - "tjsp"
+    tipos_especializados:
+      - "imprensa"
+      - "midia especializada"
+      - "setorial"
+    fontes_especializadas:
+      - "bloomberg"
+      - "brazil journal"
+      - "neofeed"
+      - "pipeline"
+      - "valor"
+    tipos_rumor:
+      - "blog"
+      - "rede social"
+      - "rumor"
+    fontes_rumor:
+      - "twitter"
+      - "whatsapp"
+      - "x"
+    justificativa_15: "fonte primaria oficial"
+    justificativa_12: "multiplas fontes consistentes"
+    justificativa_8: "midia especializada confiavel"
+    justificativa_4: "fonte identificada, mas ainda preliminar"
+    justificativa_0: "sem fonte identificavel ou sinal muito ruidoso"
+
   aderencia:
     peso_maximo: 10
-    descricao: "Fit com foco e estrategia do radar."
+    base_por_produto:
+      "M&A": 8
+      "Reestruturacao": 8
+      "ECM": 8
+      "DCM": 8
+      "SpecialSits": 8
+      "Infra": 8
+    override_por_subtipo:
+      "buy-side": 10
+      "sell-side": 10
+      "joint venture": 10
+      "carve-out": 10
+      "renegociacao": 10
+      "recuperacao judicial": 10
+      "distressed m&a": 10
+      "ipo": 10
+      "follow-on": 8
+      "block trade": 8
+      "debentures": 8
+      "bonds": 8
+      "cri/cra": 8
+      "liability management": 10
+      "capital solution": 10
+      "structured capital": 10
+      "bridge": 10
+      "rodovias": 10
+      "saneamento": 10
+      "energia": 10
+      "mobilidade": 8
+    palavras_chave_neutras:
+      - "aquisicao"
+      - "concessao"
+      - "debentures"
+      - "ipo"
+      - "reestruturacao"
+    palavras_chave_baixa:
+      - "crowdfunding"
+      - "microcredito"
+      - "seed"
+      - "serie a"
+      - "venture capital"
+    palavras_chave_fora_escopo:
+      - "grant"
+      - "subsidio publico puro"
+      - "doacao"
+    score_neutro: 5
+    score_baixo_padrao: 2
+    justificativa_10: "subtipo bem alinhado ao escopo do radar"
+    justificativa_8: "trilha coberta pelo radar"
+    justificativa_5: "encaixe ainda pouco claro, mas plausivel"
+    justificativa_2: "baixo encaixe com o foco atual"
+    justificativa_0: "fora do alcance pratico atual"
+
   competitividade:
     peso_maximo: 10
-    descricao: "Atratividade ajustada pela pressao competitiva."
+    base_por_produto:
+      "M&A": 5
+      "Reestruturacao": 8
+      "ECM": 2
+      "DCM": 5
+      "SpecialSits": 8
+      "Infra": 5
+    override_por_subtipo:
+      "bridge": 10
+      "capital solution": 10
+      "structured capital": 10
+      "renegociacao": 10
+      "distressed m&a": 10
+      "recuperacao judicial": 8
+      "liability management": 8
+      "ipo": 2
+      "follow-on": 2
+      "block trade": 2
+      "debentures": 5
+      "bonds": 5
+      "cri/cra": 5
+      "rodovias": 5
+      "saneamento": 5
+      "energia": 5
+      "mobilidade": 5
+    sinais_crowding_extremo:
+      - "consorcio"
+      - "crowded"
+      - "dezenas de interessados"
+      - "mega ipo"
+      - "mega oferta"
+    sinais_muito_concorridos:
+      - "amplamente divulgado"
+      - "bookbuilding"
+      - "coordenador lider"
+      - "leilao"
+      - "processo competitivo"
+      - "top tier"
+    sinais_menos_crowded:
+      - "bilateral"
+      - "bridge loan"
+      - "capital estruturado"
+      - "distressed"
+      - "renegociacao"
+      - "situacao especial"
+      - "waiver"
+    score_padrao: 5
+    score_muito_concorrido: 2
+    score_menos_crowded: 10
+    justificativa_10: "menos obvio e potencialmente proprietario"
+    justificativa_8: "competicao moderada a baixa"
+    justificativa_5: "tema visivel, mas ainda abordavel"
+    justificativa_2: "processo muito concorrido"
+    justificativa_0: "crowding extremo para originacao"
 
 prioridade_editorial:
   destaque_principal:
     score_minimo: 80
+    nivel_prioridade: "maxima"
+    entra_memo: "sim"
   memo_principal:
     score_minimo: 65
+    nivel_prioridade: "alta"
+    entra_memo: "sim"
   monitorar:
     score_minimo: 50
+    nivel_prioridade: "monitorar"
+    entra_memo: "nao"
   base:
     score_minimo: 0
+    nivel_prioridade: "base"
+    entra_memo: "nao"
